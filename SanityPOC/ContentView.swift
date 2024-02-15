@@ -1,34 +1,84 @@
 import SwiftUI
+import Combine
+
+private var subscriptions = Set<AnyCancellable>()
 
 struct ContentView: View {
-    let api = Api()
+    @ObservedObject private var viewModel = TakeoverViewModel()
+    @Binding private var takeoverPresented: Binding<Bool>
+
+    private var takeoverSheet = TakeoverSheet()
+
+    init() {
+        bindViewModel()
+
+        sheet(item: takeoverPresented, content: takeoverSheet)
+    }
 
     var body: some View {
         VStack {
             Button(action: loadGroqData) {
                 Text("Load via GROQ data")
             }
-            .font(.subheadline)
-            .foregroundColor(.black)
-            .padding(10)
-            .border(.black, width: 1)
+                .font(.subheadline)
+                .foregroundColor(.black)
+                .padding(10)
+                .border(.black, width: 1)
 
             Button(action: loadGraphQLData) {
                 Text("Load via graphQL data")
             }
-            .font(.subheadline)
-            .foregroundColor(.black)
-            .padding(10)
-            .border(.black, width: 1)
+                .font(.subheadline)
+                .foregroundColor(.black)
+                .padding(10)
+                .border(.black, width: 1)
         }
     }
 
     private func loadGroqData() {
-        api.getGroqData()
+        viewModel.getGroqData()
     }
 
     private func loadGraphQLData() {
-        api.getGraphQLData()
+        viewModel.getGraphQLData()
+    }
+
+    private func bindViewModel() {
+        viewModel.$takeover
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { value in
+                guard let takeover = value else { return }
+                takeoverSheet.setTakeoverData(takeover)
+            })
+            .store(in: &subscriptions)
+
+        viewModel.$showTakeover
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { value in
+                self.takeoverPresented = value
+            })
+            .store(in: &subscriptions)
+    }
+}
+
+struct TakeoverSheet: View {
+    var header = Text("")
+        .font(.headline)
+        .foregroundColor(.black)
+
+    var subheader = Text("")
+        .font(.subheadline)
+        .foregroundColor(.gray)
+
+    var body: some View {
+        VStack {
+            header
+            subheader
+        }
+    }
+
+    func setTakeoverData(_ takeover: Takeover) {
+        print(takeover)
     }
 }
 

@@ -136,157 +136,78 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3CEEBF3E-E4B7-490D-B7E0-567241831938"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SanityPOC/Api.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "getGraphQLData()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3CEEBF3E-E4B7-490D-B7E0-567241831938 - 35d1af1bb41ed4d4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SanityPOC.Api.getGraphQLData() -&gt; ()"
-                  moduleName = "SanityPOC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cdaitch/sanity-ios/SanitySampleApp/SanityPOC/Api.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "1344">
-               </Location>
-               <Location
-                  uuid = "3CEEBF3E-E4B7-490D-B7E0-567241831938 - 87e7074adfdc29c4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SanityPOC.Api.getGraphQLData() -&gt; ()"
-                  moduleName = "SanityPOC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cdaitch/sanity-ios/SanitySampleApp/SanityPOC/Api.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "128">
-               </Location>
-               <Location
-                  uuid = "3CEEBF3E-E4B7-490D-B7E0-567241831938 - 35d1af1bb41ed4d4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SanityPOC.Api.getGraphQLData() -&gt; ()"
-                  moduleName = "SanityPOC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cdaitch/sanity-ios/SanitySampleApp/SanityPOC/Api.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "1424">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1ACBC656-1494-4E79-83BE-910B0F010E0B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SanityPOC/Api.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "getGraphQLData()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1ACBC656-1494-4E79-83BE-910B0F010E0B - 87e7074adfdc281b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SanityPOC.Api.getGraphQLData() -&gt; ()"
-                  moduleName = "SanityPOC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cdaitch/sanity-ios/SanitySampleApp/SanityPOC/Api.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "552">
-               </Location>
-               <Location
-                  uuid = "1ACBC656-1494-4E79-83BE-910B0F010E0B - 87e7074adfdc281b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SanityPOC.Api.getGraphQLData() -&gt; ()"
-                  moduleName = "SanityPOC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cdaitch/sanity-ios/SanitySampleApp/SanityPOC/Api.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "268">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C6134DF0-7FEC-49D5-8DA9-2E76A0E5F0E8"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SanityPOC/Api.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "getGraphQLData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3BEA27F-2A52-40E0-AEC4-9AAF057E9589"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SanityPOC/TakeoverViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "getGroqData()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C6134DF0-7FEC-49D5-8DA9-2E76A0E5F0E8 - 35d1af1bb41ed450"
+                  uuid = "F3BEA27F-2A52-40E0-AEC4-9AAF057E9589 - 63cdc3d112af45f1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SanityPOC.Api.getGraphQLData() -&gt; ()"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SanityPOC.TakeoverViewModel.getGroqData() -&gt; ()"
                   moduleName = "SanityPOC"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cdaitch/sanity-ios/SanitySampleApp/SanityPOC/Api.swift"
+                  urlString = "file:///Users/cdaitch/sanity-ios/SanitySampleApp/SanityPOC/TakeoverViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "992">
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "792">
                </Location>
                <Location
-                  uuid = "C6134DF0-7FEC-49D5-8DA9-2E76A0E5F0E8 - 35d1af1bb41ed450"
+                  uuid = "F3BEA27F-2A52-40E0-AEC4-9AAF057E9589 - 63cdc3d112af4590"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SanityPOC.Api.getGraphQLData() -&gt; ()"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SanityPOC.TakeoverViewModel.getGroqData() -&gt; ()"
                   moduleName = "SanityPOC"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cdaitch/sanity-ios/SanitySampleApp/SanityPOC/Api.swift"
+                  urlString = "file:///Users/cdaitch/sanity-ios/SanitySampleApp/SanityPOC/TakeoverViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "1028">
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "684">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -294,15 +215,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "34B12181-9FB5-46B2-8EAD-75C964D477B7"
+            uuid = "E578F599-333C-44F3-AD66-DDFF0CAD5DA1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SanityPOC/Api.swift"
+            filePath = "SanityPOC/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
             endingLineNumber = "81"
+            landmarkName = "setTakeoverData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D992044E-945C-42BB-BBB0-94F768D03A5C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SanityPOC/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "bindViewModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "421861E2-176D-469F-A6C0-9EE07AB70096"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SanityPOC/TakeoverViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "getGraphQLData()"
             landmarkType = "7">
          </BreakpointContent>

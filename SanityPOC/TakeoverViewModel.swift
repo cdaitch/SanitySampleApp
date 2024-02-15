@@ -1,4 +1,5 @@
 import Foundation
+import Combine
 
 struct Secrets {
     let sanityApiKey: String
@@ -12,8 +13,9 @@ struct Secrets {
     }
 }
 
-class Api {
-    let secrets = Secrets()
+class TakeoverViewModel: ObservableObject {
+    private let secrets = Secrets()
+    private let decoder = JSONDecoder()
 
     lazy var baseApi = {
         return "https://\(secrets.sanityApiKey).api.sanity.io/v2021-10-21/data/query/production?"
@@ -22,6 +24,11 @@ class Api {
     lazy var baseGraphApi = {
         return "https://\(secrets.sanityApiKey).api.sanity.io/v2023-08-01/graphql/production/default"
     }()
+
+    private var subscriptions = Set<AnyCancellable>()
+
+    @Published var takeover: Takeover?
+    @Published var showTakeover: Bool = false
 
     func getGroqData() {
         let query =
@@ -35,12 +42,12 @@ class Api {
 
         let request = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else { return }
-            
-            let decoder = JSONDecoder()
 
             do {
-                let json = try decoder.decode(TakeoverResponse.self, from: data)
-                print(json)
+                let json = try self.decoder.decode(TakeoverResponseGroq.self, from: data)
+                guard let firstTakeover = json.result.first else { return }
+                self.takeover = firstTakeover
+                self.showTakeover = true
             } catch {
                 print("error: ", error)
             }
@@ -59,40 +66,52 @@ class Api {
             }
         }
         """
-        let queryString =
-        """
-        {
-            "query": "\(query)"
-        }
-        """
-
-        print(queryString)
+        let queryDic = ["query": query]
 
         guard let url = URL(string: baseGraphApi) else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = queryString.data(using: .utf8)
 
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: queryDic, options: []) else {
+            return
+        }
+
+        request.httpBody = jsonData
+
+        let session = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else { return }
 
-            if error != nil {
-                print(error)
+            if let error = error {
+                print(error.localizedDescription)
             }
 
             do {
-                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                print(json)
+                let json = try self.decoder.decode(TakeoverResponseGraph.self, from: data)
+                guard let firstTakeover = json.data.allTakeover.first else { return }
+                DispatchQueue.main.async {
+                    self.takeover = firstTakeover
+                    self.showTakeover = true
+                }
             } catch {
                 print(error.localizedDescription)
             }
-        }.resume()
+        }
+
+        session.resume()
     }
 }
 
-struct TakeoverResponse: Codable {
+struct TakeoverResponseGroq: Codable {
     let result: [Takeover]
+}
+
+struct TakeoverResponseGraph: Codable {
+    let data: AllTakeover
+}
+
+struct AllTakeover: Codable {
+    let allTakeover: [Takeover]
 }
 
 struct Takeover: Codable {
