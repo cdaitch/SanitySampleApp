@@ -216,14 +216,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E578F599-333C-44F3-AD66-DDFF0CAD5DA1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SanityPOC/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "setTakeoverData(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -232,16 +232,48 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D992044E-945C-42BB-BBB0-94F768D03A5C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SanityPOC/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "bindViewModel()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D992044E-945C-42BB-BBB0-94F768D03A5C - 66c0ecc096a2ccd9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 0 of SanityPOC.TakeoverSheet.init(header: SwiftUI.Text, subheader: SwiftUI.Text) -&gt; SanityPOC.TakeoverSheet"
+                  moduleName = "SanityPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cdaitch/sanity-ios/SanitySampleApp/SanityPOC/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "D992044E-945C-42BB-BBB0-94F768D03A5C - b9b037ac5ea6759a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;SanityPOC.Takeover&gt;) -&gt; () in SanityPOC.ContentView.bindViewModel() -&gt; ()"
+                  moduleName = "SanityPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cdaitch/sanity-ios/SanitySampleApp/SanityPOC/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "268">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -258,6 +290,22 @@
             endingLineNumber = "94"
             landmarkName = "getGraphQLData()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "44976D6B-E0E0-4A00-BF0A-B81D6C6434E3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SanityPOC/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
