@@ -1,22 +1,34 @@
 import SwiftUI
 
 struct ContentView: View {
-    let groqApi = GroqApi()
+    let api = Api()
 
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Button(action: loadData) {
-                Text("Load")
+            Button(action: loadGroqData) {
+                Text("Load via GROQ data")
             }
+            .font(.subheadline)
+            .foregroundColor(.black)
+            .padding(10)
+            .border(.black, width: 1)
+
+            Button(action: loadGraphQLData) {
+                Text("Load via graphQL data")
+            }
+            .font(.subheadline)
+            .foregroundColor(.black)
+            .padding(10)
+            .border(.black, width: 1)
         }
-        .padding()
     }
 
-    private func loadData() {
-        groqApi.getGroqData()
+    private func loadGroqData() {
+        api.getGroqData()
+    }
+
+    private func loadGraphQLData() {
+        api.getGraphQLData()
     }
 }
 

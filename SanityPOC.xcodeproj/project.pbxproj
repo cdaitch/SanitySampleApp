@@ -14,7 +14,7 @@
 		92C1BFCD2B7D22D300093B6B /* SanityPOCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C1BFCC2B7D22D300093B6B /* SanityPOCTests.swift */; };
 		92C1BFD72B7D22D300093B6B /* SanityPOCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C1BFD62B7D22D300093B6B /* SanityPOCUITests.swift */; };
 		92C1BFD92B7D22D300093B6B /* SanityPOCUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C1BFD82B7D22D300093B6B /* SanityPOCUITestsLaunchTests.swift */; };
-		92C1BFE62B7D230F00093B6B /* GroqApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C1BFE52B7D230F00093B6B /* GroqApi.swift */; };
+		92C1BFE62B7D230F00093B6B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C1BFE52B7D230F00093B6B /* Api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +45,7 @@
 		92C1BFD22B7D22D300093B6B /* SanityPOCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SanityPOCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C1BFD62B7D22D300093B6B /* SanityPOCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanityPOCUITests.swift; sourceTree = "<group>"; };
 		92C1BFD82B7D22D300093B6B /* SanityPOCUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanityPOCUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		92C1BFE52B7D230F00093B6B /* GroqApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroqApi.swift; sourceTree = "<group>"; };
+		92C1BFE52B7D230F00093B6B /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 				92C1BFBD2B7D22D100093B6B /* ContentView.swift */,
 				92C1BFBF2B7D22D200093B6B /* Assets.xcassets */,
 				92C1BFC12B7D22D200093B6B /* Preview Content */,
-				92C1BFE52B7D230F00093B6B /* GroqApi.swift */,
+				92C1BFE52B7D230F00093B6B /* Api.swift */,
 			);
 			path = SanityPOC;
 			sourceTree = "<group>";
@@ -260,7 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92C1BFE62B7D230F00093B6B /* GroqApi.swift in Sources */,
+				92C1BFE62B7D230F00093B6B /* Api.swift in Sources */,
 				92C1BFBE2B7D22D100093B6B /* ContentView.swift in Sources */,
 				92C1BFBC2B7D22D100093B6B /* SanityPOCApp.swift in Sources */,
 			);

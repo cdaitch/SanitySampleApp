@@ -12,11 +12,15 @@ struct Secrets {
     }
 }
 
-class GroqApi {
+class Api {
     let secrets = Secrets()
 
     lazy var baseApi = {
         return "https://\(secrets.sanityApiKey).api.sanity.io/v2021-10-21/data/query/production?"
+    }()
+
+    lazy var baseGraphApi = {
+        return "https://\(secrets.sanityApiKey).api.sanity.io/v2023-08-01/graphql/production/default"
     }()
 
     func getGroqData() {
@@ -43,6 +47,47 @@ class GroqApi {
         }
 
         request.resume()
+    }
+
+    func getGraphQLData() {
+        let query =
+        """
+        {
+            allTakeover {
+                title
+                description
+            }
+        }
+        """
+        let queryString =
+        """
+        {
+            "query": "\(query)"
+        }
+        """
+
+        print(queryString)
+
+        guard let url = URL(string: baseGraphApi) else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = queryString.data(using: .utf8)
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else { return }
+
+            if error != nil {
+                print(error)
+            }
+
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                print(json)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }.resume()
     }
 }
 
