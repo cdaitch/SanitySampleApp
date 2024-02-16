@@ -6,13 +6,9 @@ private var subscriptions = Set<AnyCancellable>()
 struct ContentView: View {
     @ObservedObject private var viewModel = TakeoverViewModel()
 
-    private var takeoverSheet = TakeoverSheet()
-
-    init() {
-        bindViewModel()
-    }
-
     var body: some View {
+        let sheet = TakeoverSheet(takeover: $viewModel.takeover)
+
         VStack {
             Button(action: loadGroqData) {
                 Text("Load via GROQ data")
@@ -22,7 +18,7 @@ struct ContentView: View {
                 .padding(10)
                 .border(.black, width: 1)
                 .sheet(isPresented: $viewModel.showGroqTakeover, content: {
-                    takeoverSheet
+                    sheet
                 })
             Button(action: loadGraphQLData) {
                 Text("Load via graphQL data")
@@ -32,7 +28,7 @@ struct ContentView: View {
                 .padding(10)
                 .border(.black, width: 1)
                 .sheet(isPresented: $viewModel.showGraphTakeover, content: {
-                    takeoverSheet
+                    sheet
                 })
         }
     }
@@ -44,36 +40,24 @@ struct ContentView: View {
     private func loadGraphQLData() {
         viewModel.getGraphQLData()
     }
-
-    private func bindViewModel() {
-        viewModel.$takeover
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { value in
-                guard let takeover = value else { return }
-                takeoverSheet.setTakeoverData(takeover)
-            })
-            .store(in: &subscriptions)
-    }
 }
 
 struct TakeoverSheet: View {
-    var header = Text("")
-        .font(.headline)
-        .foregroundColor(.black)
-
-    var subheader = Text("")
-        .font(.subheadline)
-        .foregroundColor(.gray)
+    @Binding var takeover: Takeover?
 
     var body: some View {
         VStack {
-            header
-            subheader
+            Text(takeover?.title ?? "")
+                .font(.headline)
+                .foregroundColor(.black)
+            Text(takeover?.description ?? "")
+                .font(.subheadline)
+                .foregroundColor(.gray)
         }
     }
 
-    func setTakeoverData(_ takeover: Takeover) {
-        print(takeover)
+    init(takeover: Binding<Takeover?>) {
+        _takeover = takeover
     }
 }
 

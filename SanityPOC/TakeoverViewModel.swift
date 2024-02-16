@@ -47,8 +47,10 @@ class TakeoverViewModel: ObservableObject {
             do {
                 let json = try self.decoder.decode(TakeoverResponseGroq.self, from: data)
                 guard let firstTakeover = json.result.first else { return }
-                self.takeover = firstTakeover
-                self.showGroqTakeover = true
+                DispatchQueue.main.async {
+                    self.takeover = firstTakeover
+                    self.showGroqTakeover = true
+                }
             } catch {
                 print("error: ", error)
             }
