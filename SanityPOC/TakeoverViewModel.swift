@@ -47,10 +47,7 @@ class TakeoverViewModel: ObservableObject {
             do {
                 let json = try self.decoder.decode(TakeoverResponseGroq.self, from: data)
                 guard let firstTakeover = json.result.first else { return }
-                DispatchQueue.main.async {
-                    self.takeover = firstTakeover
-                    self.showGroqTakeover = true
-                }
+                self.showTakeover(for: firstTakeover)
             } catch {
                 print("error: ", error)
             }
@@ -92,16 +89,21 @@ class TakeoverViewModel: ObservableObject {
             do {
                 let json = try self.decoder.decode(TakeoverResponseGraph.self, from: data)
                 guard let firstTakeover = json.data.allTakeover.first else { return }
-                DispatchQueue.main.async {
-                    self.takeover = firstTakeover
-                    self.showGraphTakeover = true
-                }
+                self.showTakeover(for: firstTakeover)
             } catch {
                 print(error.localizedDescription)
             }
         }
 
         session.resume()
+    }
+
+    private func showTakeover(for takeover: Takeover) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.takeover = takeover
+            self.showGraphTakeover = true
+        }
     }
 }
 
