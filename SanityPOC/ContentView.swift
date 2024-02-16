@@ -5,7 +5,6 @@ private var subscriptions = Set<AnyCancellable>()
 
 struct ContentView: View {
     @ObservedObject private var viewModel = TakeoverViewModel()
-    @State private var showModal = false
 
     private var takeoverSheet = TakeoverSheet()
 
@@ -22,7 +21,7 @@ struct ContentView: View {
                 .foregroundColor(.black)
                 .padding(10)
                 .border(.black, width: 1)
-                .sheet(isPresented: $showModal, content: {
+                .sheet(isPresented: $viewModel.showGroqTakeover, content: {
                     takeoverSheet
                 })
             Button(action: loadGraphQLData) {
@@ -32,7 +31,7 @@ struct ContentView: View {
                 .foregroundColor(.black)
                 .padding(10)
                 .border(.black, width: 1)
-                .sheet(isPresented: $showModal, content: {
+                .sheet(isPresented: $viewModel.showGraphTakeover, content: {
                     takeoverSheet
                 })
         }
@@ -52,13 +51,6 @@ struct ContentView: View {
             .sink(receiveValue: { value in
                 guard let takeover = value else { return }
                 takeoverSheet.setTakeoverData(takeover)
-            })
-            .store(in: &subscriptions)
-
-        viewModel.$showTakeover
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { value in
-                self.showModal = true
             })
             .store(in: &subscriptions)
     }

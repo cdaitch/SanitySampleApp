@@ -28,7 +28,8 @@ class TakeoverViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
 
     @Published var takeover: Takeover?
-    @Published var showTakeover: Bool = false
+    @Published var showGroqTakeover: Bool = false
+    @Published var showGraphTakeover: Bool = false
 
     func getGroqData() {
         let query =
@@ -47,7 +48,7 @@ class TakeoverViewModel: ObservableObject {
                 let json = try self.decoder.decode(TakeoverResponseGroq.self, from: data)
                 guard let firstTakeover = json.result.first else { return }
                 self.takeover = firstTakeover
-                self.showTakeover = true
+                self.showGroqTakeover = true
             } catch {
                 print("error: ", error)
             }
@@ -91,7 +92,7 @@ class TakeoverViewModel: ObservableObject {
                 guard let firstTakeover = json.data.allTakeover.first else { return }
                 DispatchQueue.main.async {
                     self.takeover = firstTakeover
-                    self.showTakeover = true
+                    self.showGraphTakeover = true
                 }
             } catch {
                 print(error.localizedDescription)
