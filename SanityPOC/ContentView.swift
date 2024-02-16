@@ -4,11 +4,10 @@ import Combine
 private var subscriptions = Set<AnyCancellable>()
 
 struct ContentView: View {
-    @ObservedObject private var viewModel = TakeoverViewModel()
+    @StateObject private var viewModel = TakeoverViewModel()
 
     var body: some View {
-        let sheet = TakeoverSheet(takeover: $viewModel.takeover)
-
+        let sheet = TakeoverSheet(takeover: viewModel.takeover)
         VStack {
             Button(action: loadGroqData) {
                 Text("Load via GROQ data")
@@ -43,7 +42,7 @@ struct ContentView: View {
 }
 
 struct TakeoverSheet: View {
-    @Binding var takeover: Takeover?
+    @State var takeover: Takeover?
 
     var body: some View {
         VStack {
@@ -54,10 +53,6 @@ struct TakeoverSheet: View {
                 .font(.subheadline)
                 .foregroundColor(.gray)
         }
-    }
-
-    init(takeover: Binding<Takeover?>) {
-        _takeover = takeover
     }
 }
 
