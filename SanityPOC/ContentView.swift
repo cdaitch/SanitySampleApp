@@ -1,8 +1,6 @@
 import SwiftUI
 import Combine
 
-private var subscriptions = Set<AnyCancellable>()
-
 struct ContentView: View {
     @StateObject private var viewModel = TakeoverViewModel()
 
