@@ -18,7 +18,7 @@ class TakeoverViewModel: ObservableObject {
     private let decoder = JSONDecoder()
 
     lazy var baseApi = {
-        return "https://\(secrets.sanityApiKey).api.sanity.io/v2021-10-21/data/query/production?"
+        return "https://\(secrets.sanityApiKey).api.sanity.io/v2021-10-21/data/query/production"
     }()
 
     lazy var baseGraphApi = {
@@ -37,7 +37,7 @@ class TakeoverViewModel: ObservableObject {
         *[_type == "takeover"]
         """
         let encoded = URLQueryItem(name: "query", value: query)
-        let urlString = "\(baseApi)\(encoded)"
+        let urlString = "\(baseApi)?\(encoded)"
 
         guard let url = URL(string: urlString) else { return }
 
